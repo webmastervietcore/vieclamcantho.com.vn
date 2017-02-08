@@ -1,0 +1,34 @@
+RewriteEngine on 
+Options All -Indexes
+RewriteRule "nha-tuyen-dung-dang-ky.html" "frmdangky.php"
+RewriteRule "quan-ly-bai-viet.html" "quanlytuyendung.php"
+RewriteRule "quan-ly-thong-tin.html" "quanlythongtin.php"
+RewriteRule "cap-nhat-thong-tin-ho-so.html" "capnhatthongtinhoso.php"
+RewriteRule "ho-so-da-nop.html" "hosodanop.php"
+RewriteRule "dang-tin-tuyen-dung.html" "tuyendung.php"
+RewriteRule "ho-so-ung-vien.html" "hosoungvien.php"
+RewriteRule "ung-vien-dang-ky-ho-so.html"  "frmdangkyungvien.php"
+
+RewriteRule ^ho-so-ung-vien-trang-(.*).html$ hosoungvien.php?page=$1
+RewriteRule ^ho-so-ung-vien-(.*)-trang-(.*).html$ hosoungvien.php?page=$2&loc=$1
+
+RewriteRule ^ho-so-chi-tiet-(.*).html$ hosochitiet.php?id=$1
+RewriteRule  ^trang-(.*).html$    index.php?page=$1
+
+RewriteRule  ^tuyen-dung-(.*)-tai-kv-(.*)-([0-9]+)-([0-9]+)-trang-([0-9]+).html$    index.php?tenvung=$1&tennganh=$2&mavung=$3&manganh=$4&page=$5
+
+RewriteRule  ^chinh-sua-tuyen-dung-asd-(.*)-fgh-(.*)-hjk-(.*).html$    chinhsuatuyendung.php?product=$1&matuyendung=$2&token=$3
+RewriteRule  ^viec-lam-(.*)-(.*)-trang-(.*).html$    tuyendungvung.php?tenvung=$1&mavung=$2&page=$3
+RewriteRule  ^tuyen-dung-(.*)-(.*)-trang-(.*).html$    tuyendungnganh.php?tennganh=$1&manganh=$2&page=$3
+RewriteRule  ^(.*)-(.*).html$    chitiet.php?tieude=$1&matuyendung=$2
+
+
+RewriteCond %{HTTP_HOST} ^www.vieclamcantho.com.vn$ [NC]
+RewriteRule ^(.*)$ http://vieclamcantho.com.vn/$1 [R=301,L]
+
+
+RewriteRule ^index.html$  http://vieclamcantho.com.vn/  [L,R=301] 
+
+
+
+
